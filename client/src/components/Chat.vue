@@ -26,8 +26,14 @@
     <div class="container">
         <div class="chatContainer">
             <div v-for="message in messages" :key="message.id">
-                <div v-if="message.isMe" class="me">{{ message.content }} :{{ message.from }}</div>
-                <div v-else>{{ message.from }}: {{ message.content }}</div>
+                <div v-if="message.isMe" class="me">
+                    <span>{{ message.content }}</span> 
+                    <span class="author">:{{ message.from }}</span>
+                </div>
+                <div v-else>
+                    <span class="author">{{ message.from }}:</span>
+                    <span>{{ message.content }}</span> 
+                </div>
             </div>
         </div>
 
@@ -59,10 +65,22 @@
         flex: 1;
         text-align: right;
     }
+    .me .author {
+        color: hsla(160, 100%, 37%, 1);
+    }
     .form {
         display: flex;
+        gap: 1rem;
     }
     .form input {
+        font-family: inherit;
         flex: 1;
+        padding: 1rem;
+        border-radius: 0.25rem;
+    }
+    .form button {
+        font-family: inherit;
+        padding: 0 2rem;
+        text-transform: uppercase;
     }
 </style>
