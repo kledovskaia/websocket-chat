@@ -1,6 +1,6 @@
 <script setup>
-import Header from './components/Header.vue'
-import Chat from './components/Chat.vue'
+  import Header from './components/Header.vue'
+  import Chat from './components/Chat.vue'
 </script>
 
 <template>
@@ -20,16 +20,6 @@ import Chat from './components/Chat.vue'
 
   font-weight: normal;
 }
-
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 a,
 .green {
   text-decoration: none;

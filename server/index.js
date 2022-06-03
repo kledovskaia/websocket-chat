@@ -1,7 +1,7 @@
 import http from 'http'
 import { server as WebSocketServer } from 'websocket'
 
-const { PORT } = process.env;
+const PORT = process.env.PORT || 8000;
 
 const httpServer = http.createServer((request, response) => {
     console.log(`[${new Date}]: Received request for ${request.url}`)
@@ -9,7 +9,7 @@ const httpServer = http.createServer((request, response) => {
     response.end()
 })
 
-server.listen(PORT, () => {
+httpServer.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`)
 })
 
@@ -17,6 +17,7 @@ const server = new WebSocketServer({
     httpServer,
     autoAcceptConnections: false,
 })
+
 
 const isAllowedOrigin = (origin) => true;
 

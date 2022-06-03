@@ -1,5 +1,5 @@
 <script setup>
-import Title from './Title.vue'
+  import Title from './Title.vue'
 </script>
 
 <template>
@@ -12,9 +12,11 @@ import Title from './Title.vue'
 </template>
 
 <style>
-    header {
+  header {
     display: flex;
-    place-items: center;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
     padding-right: calc(var(--section-gap) / 2);
   }
 
@@ -22,9 +24,5 @@ import Title from './Title.vue'
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
   }
 </style>
