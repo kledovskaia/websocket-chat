@@ -10,6 +10,9 @@
     socket.onmessage = (({ data }) => {
         console.log({ data })
         messages.push(JSON.parse(data))
+        const messageElements = document.querySelectorAll('.message')
+        const last = messageElements[messageElements.length - 1]
+        last.scrollIntoView({ behavior: 'smooth' })
     })
     
     function sendHandler (event) {
@@ -56,7 +59,8 @@
     .chatContainer {
         font-size: 1.4rem;
         height: 50vh;
-        overflow-y: auto;
+        padding-bottom: 3rem;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
     }
